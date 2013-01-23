@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firefox OS Apps</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type='text/css' href="decky.css">
+    <link rel="stylesheet" type='text/css' href="talk.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <article id="deck">
+
+<section>
+  <h1>What's a Firefox OS App, Anyway??</h1>
+</section>
+
+<section>
+  <h2>The Manifest.</h2>
+
+  <ul>
+  <li>A JSON file contaning metadata about your app</li>
+  <li>name, icon, etc.</li>
+  <li><code>application/x-web-app-manifest+json</code></li>
+  </ul>
+</section>
+
+<section>
+  <pre>
+{
+    "name": "TicTacApp",
+    "description": "A simple tic tac toe game",
+    "developer": {
+        "name": "Potch",
+        "url": "http://github.com/potch"
+    },
+    "launch_path": "/index.html",
+    "default_locale": "en",
+    "icons": {
+        "128": "/icon-128.png"
+    }
+}
+  </pre>
+</section>
+
+<section>
+  <h1>Kinds Of Firefox OS Apps</h1>
+</section>
+
+<section>
+  <h1>"Hosted App"</h1>
+
+  <h3>Existing Web Site + App Manifest = Hosted App</h3>
+</section>
+
+<section>
+  <h3>Pros</h3>
+
+  <ul>
+  <li>Easy. takes very little work to convert!</li>
+  <li>Works well with existing back-end frameworks (Django, Rails, etc.)</li>
+  <li>Great for developers who aren't comfortable with front-end tech.</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Cons</h3>
+
+  <ul>
+  <li>Not <em>that</em> easy.
+  <ul><li>Where's the back button?</li></ul></li>
+  <li>Performance
+  <ul><li>Synchronous page-loads on every user action = slow.</li>
+  <li>Bandwidth hog!
+  <ul><li>Requires WiFi to work well</li>
+  <li>Bandwidth === $$$</li></ul></li></ul></li>
+  <li>Little-to-no offline support.
+  <ul><li>Browser cache <em>might</em> save you...</li></ul></li>
+  <li>Poor first-run experience
+  <ul><li>Gray screen of sadness</li></ul></li>
+  <li>"Glorified Bookmark"
+  <ul><li>:(</li></ul></li>
+  </ul>
+</section>
+
+<section>
+  <img class="hero" src="suv.jpg">
+  <h1>"The SUV"</h1>
+</section>
+
+<section>
+  <h2>"Packaged App"</h2>
+
+  <p>.zip of Static resources (including App Manifest)</p>
+</section>
+
+<section>
+  <h3>Pros</h3>
+
+  <ul>
+  <li>No Hosting Required!
+  <ul><li>HTML/CSS/JS nerds, rejoice!</li></ul></li>
+  <li>Awesome first-run experience!
+  <ul><li>Full .zip is downloaded when the user installs the app</li></ul></li>
+  <li>Performance
+  <ul><li>No network requests for resources</li></ul></li>
+  <li>No Connection? No Problem.</li>
+  <li>API Goodies
+  <ul><li>Socket connections, SMS, Camera, Contacts</li></ul></li>
+  <li>"Feels Like Native!"
+  <ul><li>&lt;3</li></ul></li>
+  </ul>
+</section>
+
+<section>
+  <h3>Cons</h3>
+
+  <ul>
+  <li>Monolithic updates</li>
+  <li>Communication with a server is harder
+  <ul><li>CORS</li></ul></li>
+  <li>Much stricter review process
+  <ul><li>You have access to more powerful APIs &mdash; we need to know that you're playing nice.</li></ul></li>
+  <li>Well, it's not really a <em>Web</em> App, is it?
+  <ul><li>Packaged apps only run where they are supported
+  <ul><li>Firefox OS, Firefox For Android</li></ul></li></ul></li>
+  </ul>
+</section>
+
+<section>
+  <img class="hero" src="bullet-train.jpg">
+  <h1>"The Bullet Train"</h1>
+  <details>
+    <p>"That actually sounds pretty great, but I <em>do</em> have a server-side component"</p>
+
+    <p>What if I told you there was a third way?</p>
+  </details>
+</section>
+
+<section>
+  <img class="hero" src="hybrid.jpg">
+  <h1 data-subslide="1">"Modern HTML5 Web App"</h1>
+</section>
+
+<section>
+  <h2>Pros</h2>
+
+  <ul>
+  <li>Awesome first-run experience!</li>
+  <li>It's still a web app
+  <ul><li>Dynamic content</li></ul></li>
+  <li>Performance
+  <ul><li>No network requests for static resources</li></ul></li>
+  <li>Graceful Offline Experience</li>
+  <li>Bandwidth-Friendly</li>
+  <li>It's still a web site!
+  <ul><li>Available wherever fine websites are served</li></ul></li>
+  <li>"Feels like Native!<sup>*&dagger;&Dagger;"</sup></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Cons</h2>
+
+  <ul>
+  <li>Not your granddaddy's web app.
+  <ul><li>Requires knowledge of new and emerging Web tech</li></ul></li>
+  <li>Fewer API goodies
+  <ul><li>Privileged APIs are not available</li>
+  <li>More are coming!</li></ul></li>
+  <li>Heavy on the JavaScript</li>
+  </ul>
+  <details>
+    <p>"Well okay, that last one sounds complicated"</p>
+    <p>But totally worth it.</p>
+  </details>
+</section>
+
+<section>
+  <h1>Secret Ingredients</h1>
+  <ul>
+    <li>Designed for Mobile</li>
+    <li>Touch-friendly</li>
+    <li>Static resources stored locally</li>
+    <li>Handles connectivity loss gracefully</li>
+    <li>Loads content/data asynchronously</li>
+    <li>Supports deep linking!</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Examples of Single-Page Web Apps</h2>
+  <ul>
+  <li><a href="https://mail.google.com/">GMail</a></li>
+  <li><a href="https://facebook.com/">Facebook</a></li>
+  <li><a href="https://twitter.com/">Twitter</a></li>
+  <li><a href="https://marketplace.firefox.com/">Firefox Marketplace</a></li>
+  </ul>
+</section>
+
+<section>
+  <h1>Appcache</h1>
+  <p class="c">"The HTML5 Offline Application Cache"</p>
+</section>
+
+<section>
+  <h3>I have a love-hate relationship with appcache.</h3>
+
+  <blockquote class="twitter-tweet"><p>The HTML5 Offline Cache is proof that if there is a god there's only one of them, because design by committee doesn't work.</p>&mdash; potch (@potch) <a href="https://twitter.com/potch/status/247809784101863424" data-datetime="2012-09-17T21:30:31+00:00">September 17, 2012</a></blockquote>
+</section>
+
+<section>
+  <pre>
+CACHE MANIFEST
+<span data-subslide=1># Version 1</span>
+<span data-subslide=2>
+CACHE:
+/index.html
+/media/style.css
+/media/site.js
+/logo.png
+https://example.com/jquery.js
+</span>
+<span data-subslide=3>
+NETWORK
+*
+</span>
+
+  </pre>
+</section>
+
+<section>
+  <h1 id="hashbang">#!</h1>
+</section>
+
+<section>
+  <h2>Hoodwinking the location bar</h2>
+  <pre>
+history.pushState(
+  {page: 2},
+  'Page 2',
+  '/list?page=2'
+);
+
+window.addEventListener('popstate', function(e) {
+  updateAppState(e.state);
+});
+</pre>
+  </ul>
+</section>
+
+<section>
+  <h1>Getting Touchy</h1>
+  <pre>
+var hasTouch = ('ontouchstart' in window) ||
+               window.DocumentTouch &&
+               document instanceof DocumentTouch;
+  </pre>
+</section>
+
+<section>
+  <h1>Let's Do This!</h1>
+</section>
+
+<section>
+  <h1>Thanks!</h1>
+  <ul>
+    <li>potch@mozilla.com</li>
+    <li>github.com/potch</li>
+    <li>@potch</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Announcements</h1>
+  <ul>
+    <li>Lunch</li>
+    <li>Firebase</li>
+    <li>We're here to help!</li>
+    <li>NFC</li>
+    <li>Droid@Screen</li>
+  </ul>
+</section>
+
+</article>
+
+    <script src="µ.js"></script>
+    <script src="decky.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  </body>
+</html>
