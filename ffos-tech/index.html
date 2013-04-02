@@ -12,30 +12,29 @@
           padding: 0;
           height: 100%;
           width: 100%;
-          font-size: 8px;
+          font-size: 4vmin;
       }
       #deck {
-          width: 130rem;
-          height: 100rem;
+          width: 130vmin;
+          height: 100vmin;
           margin: auto;
           overflow: hidden;
           position: relative;
       }
       section {
-          width: 130rem;
-          height: 100rem;
+          width: 130vmin;
+          height: 100vmin;
           overflow: hidden;
           padding: 5%;
           position: relative;
           counter-increment: slides;
           background: #fff;
-          font-size: 4rem;
       }
       section:after {
           content: counter(slides);
           position: absolute;
-          right: 2rem;
-          bottom: 2rem;
+          right: 2vmin;
+          bottom: 2vmin;
           font-size: 50%;
           color: rgba(0,0,0,.5);
       }
@@ -44,9 +43,9 @@
       }
       body.list section {
           border: 1px solid black;
-          margin: 2rem;
-          width: 46rem;
-          height: 50rem;
+          margin: 2vmin;
+          width: 46vmin;
+          height: 50vmin;
           float: left;
       }
       body.list [data-subslide] {
@@ -57,12 +56,12 @@
           margin: 2% 0;
           font-weight: 800;
       }
-      h1 { font-size: 8rem; }
-      h2 { font-size: 6rem; }
-      h3 { font-size: 4rem; }
+      h1 { font-size: 200%; }
+      h2 { font-size: 180%; }
+      h3 { font-size: 120%; }
 
       h1:only-child {
-          margin-top: 30rem;
+          margin-top: 30vmin;
       }
 
       section li {
@@ -118,14 +117,6 @@
     </style>
     <link rel="stylesheet" type='text/css' href="talk.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600' rel='stylesheet' type='text/css'>
-    <style type="text/css" media="print">
-      section {
-        display: block;
-      }
-      [data-subslide] {
-        visibility: visible !important;
-      }
-    </style>
   </head>
   <body>
     <article id="deck">
@@ -160,7 +151,7 @@
       <div class="shell">
         Native Apps
       </div>
-      <div class="shell" style="margin-top: 3rem">
+      <div class="shell" style="margin-top: 3vmin">
         Browser App
         <div class="web shell">
           Web Apps
@@ -173,7 +164,7 @@
     <h1>Firefox OS</h1>
     <div class="shell outer target">
       Browser As OS
-      <div class="web shell" style="height: 39rem">
+      <div class="web shell" style="height: 39vmin">
         Web Apps
       </div>
     </div>

@@ -21,7 +21,6 @@ html {
   padding: 0;
 }
 body {
-  font-size: 8px;
   background: #000;
   background-image: -moz-radial-gradient(#fff, #D4DDE4);
   overflow: hidden;
@@ -52,18 +51,18 @@ section, [data-pos=after] {
   -o-transition: 0.5s -o-transform ease-in-out;
   transition: 0.5s transform ease-in-out;
 */
-  -webkit-transform: translate(150rem, 0);
-  -moz-transform: translate(150rem, 0);
-  -ms-transform: translate(150rem, 0);
-  -o-transform: translate(150rem, 0);
-  transform: translate(150rem, 0);
+  -webkit-transform: translate(150vmin, 0);
+  -moz-transform: translate(150vmin, 0);
+  -ms-transform: translate(150vmin, 0);
+  -o-transform: translate(150vmin, 0);
+  transform: translate(150vmin, 0);
 }
 [data-pos=before] {
-  -webkit-transform: translate(-150rem, 0);
-  -moz-transform: translate(-150rem, 0);
-  -ms-transform: translate(-150rem, 0);
-  -o-transform: translate(-150rem, 0);
-  transform: translate(-150rem, 0);
+  -webkit-transform: translate(-150vmin, 0);
+  -moz-transform: translate(-150vmin, 0);
+  -ms-transform: translate(-150vmin, 0);
+  -o-transform: translate(-150vmin, 0);
+  transform: translate(-150vmin, 0);
 }
 [data-pos=active] {
   -webkit-transform: translate(0, 0);
@@ -86,15 +85,15 @@ footer {
 }
 
 .shell.outer {
-  width: 60rem;
-  margin: 8rem auto 0;
+  width: 60vmin;
+  margin: 8vmin auto 0;
 }
 
 .shell {
-  padding: 3rem;
-  border: .5rem solid #666;
+  padding: 3vmin;
+  border: .5vmin solid #666;
   background: #eee;
-  line-height: 5rem;
+  line-height: 5vmin;
 }
 
 .shell.target {
@@ -111,94 +110,94 @@ footer {
   background-image: url('fox-lead.png');
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 55rem 50rem 0 10rem;
+  padding: 55vmin 50vmin 0 10vmin;
 }
 .title .wordmark {
   display: block;
-  width: 40rem;
-  margin-left: -3.5rem;
-  margin-bottom: -8rem;
+  width: 40vmin;
+  margin-left: -3.5vmin;
+  margin-bottom: -8vmin;
 }
 .title h1, .title h2 {
   text-align: left;
 }
 .title h2 {
-  font-size: 4rem;
+  font-size: 4vmin;
 }
 
 .wordmark {
   display: inline-block;
-  width: 40rem;
-  margin: -3rem;
+  width: 40vmin;
+  margin: -3vmin;
 }
 
 ul.stack {
   color: #fff;
-  width: 60rem;
+  width: 60vmin;
   margin: auto;
   text-align: center;
   list-style-type: none;
   padding: 0;
-  margin-top: 15rem;
+  margin-top: 15vmin;
 }
 .stack li {
-  line-height: 11rem;
-  margin: 1rem;
+  line-height: 11vmin;
+  margin: 1vmin;
 }
 
 .browser {
   margin: auto;
-  width: 80rem;
-  height: 60rem;
-  margin-top: 10rem;
-  border: .5rem solid #666;
-  padding-top: 2rem;
-  border-radius: 2rem 2rem 0 0;
+  width: 80vmin;
+  height: 60vmin;
+  margin-top: 10vmin;
+  border: .5vmin solid #666;
+  padding-top: 2vmin;
+  border-radius: 2vmin 2vmin 0 0;
 }
 .tab {
-  border: .5rem solid #666;
+  border: .5vmin solid #666;
   display: inline-block;
   vertical-align: bottom;
-  height: 4rem;
-  margin-left: 2rem;
+  height: 4vmin;
+  margin-left: 2vmin;
   border-bottom-width: 0;
-  border-radius: 1rem 1rem 0 0;
-  width: 10rem;
+  border-radius: 1vmin 1vmin 0 0;
+  width: 10vmin;
 }
 .butt {
   float: left;
-  width: 5rem;
-  height: 5rem;
-  margin: .5rem;
-  border-radius: 5rem;
-  border: .5rem solid #666;
+  width: 5vmin;
+  height: 5vmin;
+  margin: .5vmin;
+  border-radius: 5vmin;
+  border: .5vmin solid #666;
 }
 .loc {
   float: left;
-  border: .5rem solid #666;
+  border: .5vmin solid #666;
   border-left: 0;
-  width: 73.5rem;
-  height: 4rem;
-  margin-left: -1rem;
+  width: 73.5vmin;
+  height: 4vmin;
+  margin-left: -1vmin;
   position: absolute;
-  top: 1rem;
-  left: 5.5rem;
+  top: 1vmin;
+  left: 5.5vmin;
 }
 .url {
-  border: .5rem solid #666;
-  border-width: .5rem 0;
-  height: 7rem;
+  border: .5vmin solid #666;
+  border-width: .5vmin 0;
+  height: 7vmin;
   position: relative;
 }
 .browser.fade, .fade div, .fade span{
   border-color: #ccc;
 }
 .content {
-  border: .5rem solid #FF9500 !important;
+  border: .5vmin solid #FF9500 !important;
   background: hsla(35, 100%, 87%, 1);
-  height: 46rem;
-  line-height: 40rem;
+  height: 46vmin;
+  line-height: 40vmin;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 4vmin;
   text-align: center;
 }
