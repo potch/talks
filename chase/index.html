@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firefox OS Technical Details</title>
+    <meta charset="utf-8">
+    <style>
+      * {
+          -moz-box-sizing: border-box;
+      }
+      body, html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          width: 100%;
+          font-size: 4vmin;
+      }
+      #deck {
+          width: 130vmin;
+          height: 100vmin;
+          margin: auto;
+          overflow: hidden;
+          position: relative;
+      }
+      section {
+          width: 130vmin;
+          height: 100vmin;
+          overflow: hidden;
+          padding: 5%;
+          position: relative;
+          counter-increment: slides;
+          background: #fff;
+      }
+      section:after {
+          content: counter(slides);
+          position: absolute;
+          right: 2vmin;
+          bottom: 2vmin;
+          font-size: 50%;
+          color: rgba(0,0,0,.5);
+      }
+      body.list {
+          overflow: inherit;
+      }
+      body.list section {
+          border: 1px solid black;
+          margin: 2vmin;
+          width: 46vmin;
+          height: 50vmin;
+          float: left;
+      }
+      body.list [data-subslide] {
+          visibility: visible !important;
+      }
+      h1, h2, h3 {
+          text-align: center;
+          margin: 2% 0;
+          font-weight: 800;
+      }
+      h1 { font-size: 200%; }
+      h2 { font-size: 180%; }
+      h3 { font-size: 120%; }
+
+      h1:only-child {
+          margin-top: 30vmin;
+      }
+
+      section li {
+          margin: 1% 0;
+      }
+      section table {
+          border-collapse: collapse;
+          width: 100%;
+      }
+      table th,
+      table td {
+          padding: 1% 2%;
+          text-align: left;
+      }
+      table thead tr {
+          background: rgba(0,0,0,.2);
+      }
+      table tr:nth-child(2n) {
+          background: rgba(0,0,0,.1);
+      }
+      section .col {
+          width: 49%;
+          float: left;
+          margin: 0 0.5%;
+      }
+      img {
+          vertical-align: middle;
+          display: block;
+      }
+      .hero {
+          max-height: 80%;
+          max-width: 100%;
+          display: block;
+          margin: 0 auto;
+      }
+      details {
+          display: none;
+      }
+      header, footer {
+        width: 100%;
+        position: fixed;
+        z-index: -1;
+      }
+      header {
+        top: 0;
+      }
+      footer {
+        font-size: 80%;
+        bottom: 0;
+        text-align: center;
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet" type='text/css' href="talk.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <article id="deck">
+
+<section class="title">
+  <img class="wordmark" src="wordmark.png">
+  <h2>Technical Details</h2>
+</section>
+
+<section>
+  <h1>  <img class="wordmark" src="wordmark.png">
+ = B2G</h1>
+</section>
+
+<section>
+  <h2>B2G<sup data-subslide=1>3</sup></h2>
+  <ul class="stack">
+    <li data-subslide=4 style="background:linear-gradient(#FF9500, #E66000)"><b>Gaia</b> &mdash; the UI</li>
+    <li data-subslide=3 style="background:linear-gradient(#0095DD, #00539F)"><b>Gecko</b> &mdash; the OS</li>
+    <li data-subslide=2 style="background:linear-gradient(#6A7B86, #424F5A)"><b>Gonk</b> &mdash; the kernel</li>
+  </ul>
+</section>
+
+<section>
+  <h1>&ldquo;The Web Is The Platform&rdquo;</h1>
+</section>
+
+<section>
+    <h1>Traditional Mobile Platform</h1>
+    <div class="shell outer target">
+      OS
+      <div class="shell">
+        Native Apps
+      </div>
+      <div class="shell" style="margin-top: 3vmin">
+        Browser App
+        <div class="web shell">
+          Web Apps
+        </div>
+      </div>
+    </div>
+</section>
+
+<section>
+    <h1>Firefox OS</h1>
+    <div class="shell outer target">
+      Browser As OS
+      <div class="web shell" style="height: 39vmin">
+        Web Apps
+      </div>
+    </div>
+</section>
+
+<section>
+  <div class="browser">
+    <span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>
+    <div class="url">
+      <div class="butt"></div>
+      <div class="loc"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="browser fade">
+    <span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span>
+    <div class="url">
+      <div class="butt"></div>
+      <div class="loc"></div>
+    </div>
+    <div class="content">
+      The Good Stuff
+    </div>
+  </div>
+</section>
+
+<section>
+  <h1>Open</h1>
+</section>
+
+<section>
+  <h1>Open</h1>
+  <ul>
+    <li data-subslide=1><b>Source!</b> <code>https://github.com/mozilla-b2g/B2G</code></li>
+    <li data-subslide=2><b>Engineering</b></li>
+    <li data-subslide=3><b>Market!</b></li>
+  </ul>
+</section>
+
+<section>
+  <h1>Kinds Of Firefox OS Apps</h1>
+</section>
+
+<section>
+  <h1>"Hosted App"</h1>
+
+  <ul>
+    <li>Existing Web Site + App Manifest = Hosted App
+    <li>Performs like a website
+    <li>Easy to build
+    <li>Fewer privileges
+  </ul>
+</section>
+
+<section>
+  <h1>"Packaged App"</h1>
+
+  <ul>
+    <li>.zip of Static web resources (including App Manifest)
+    <li>Performs more like a traditional app
+    <li>Larger learning curve
+    <li>More privileges
+  </ul>
+</section>
+<section>
+  <h2>The Manifest</h2>
+  <ul>
+  <li>A JSON file contaning metadata about your app</li>
+  <li>name, icon, etc.</li>
+  <li><code>application/x-web-app-manifest+json</code></li>
+  </ul>
+</section>
+
+<section>
+  <pre>
+{
+    "name": "TicTacApp",
+    "description": "A simple tic tac toe game",
+    "developer": {
+        "name": "Potch",
+        "url": "http://github.com/potch"
+    },
+    "launch_path": "/index.html",
+    "default_locale": "en",
+    "icons": {
+        "128": "/icon-128.png"
+    }
+}
+  </pre>
+</section>
+
+<section>
+  <h1>Secret Ingredients</h1>
+  <ul>
+    <li>Designed for Mobile</li>
+    <li>Touch-friendly</li>
+    <li>Static resources stored locally</li>
+    <li>Handles connectivity loss gracefully</li>
+    <li>Loads content/data asynchronously</li>
+    <li>Supports deep linking!</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Let's take this offline.</h1>
+</section>
+
+<section>
+  <pre>
+CACHE MANIFEST
+<span data-subslide=1># Version 1</span>
+<span data-subslide=2>
+CACHE:
+/index.html
+/media/style.css
+/media/site.js
+/logo.png
+https://example.com/jquery.js
+</span>
+<span data-subslide=3>
+NETWORK
+*
+</span>
+  </pre>
+</section>
+
+<section>
+  <h1>Thanks!</h1>
+  <ul>
+    <li>potch@mozilla.com</li>
+    <li>github.com/potch</li>
+    <li>@potch</li>
+  </ul>
+</section>
+
+</article>
+
+    <script src="µ.js"></script>
+    <script src="decky.js"></script>
+
+  </body>
+</html>
