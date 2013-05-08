@@ -1,0 +1,131 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('OpenSans-Light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+* {
+  font-weight: 300;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+}
+kbd,
+code,
+pre {
+  font-family: monospace;
+}
+body,
+html {
+  background: #000;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: #000;
+  background-image: -moz-linear-gradient(#394c58, #60747f);
+  background-image: -webkit-linear-gradient(#394c58, #60747f);
+  -moz-transform-style: preserve-3d;
+  -moz-perspective: 2000px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-perspective: 2000px;
+}
+a {
+  color: #adf;
+}
+#masthead {
+  float: left;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 1%;
+}
+section:not(.list) {
+  margin: 0;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -moz-transition: 0.5s -moz-transform ease-in-out;
+  -webkit-transition: 0.5s -webkit-transform ease-out;
+}
+section:not(.list).before {
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+section:not(.list).active {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+section:not(.list).after {
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.head {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  font-size: 80%;
+}
+.drop {
+  box-shadow: 0 5px 20px #000;
+}
+#toolgrid {
+  height: 80%;
+  width: 70%;
+}
+#toolgrid div {
+  width: 50%;
+  height: 50%;
+  float: left;
+}
+#toolgrid div:nth-child(1) {
+  background-position: bottom left;
+}
+#toolgrid div:nth-child(2) {
+  background-position: center center;
+}
+#js {
+  font-size: 350%;
+}
+#amo,
+#mkt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 90%;
+  max-width: 100%;
+  max-height: 617px;
+}
+#html5 {
+  position: relative;
+}
+#html5 img {
+  position: absolute;
+  height: 5em;
+}
+#mkt {
+  max-height: 746px;
+}
+footer {
+  font-size: 70%;
+}
+#ew {
+  height: 2em;
+  margin-top: -0.2em;
+}
+#java {
+  margin-top: -0.2em;
+  height: 1.2em;
+}

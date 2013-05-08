@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="decky.css">
+    <link rel="stylesheet" href="media/talk.less.css">
+  </head>
+  <body>
+    <section>
+      <h1>Building Apps for Firefox OS</h1>
+      <h3>Potch, Mozilla</h3>
+    </section>
+    <section>
+      <img class="hero" src="media/potch.png">
+      <h2>Hello!</h2>
+    </section>
+    <section>
+      <img id="amo" src="media/amo-nq8.png">
+    </section>
+    <section>
+      <img id="mkt" src="media/mkt-nq8.png">
+    </section>
+    <section>
+      <h1 id="js">
+        <img id="java" src="media/java.png"><span data-subslide=1>Script
+        <img id="ew" src="media/ew.png"></span>
+      </h1>
+    </section>
+    <section>
+      <img class="hero" src="media/mkt-logo.png">
+    </section>
+    <section>
+      <h1>A Short Survey</h1>
+      <ul>
+        <li data-subslide=1>Have you built an Android App?</li>
+        <li data-subslide=2>Have you written a web application?</li>
+        <li data-subslide=3>Are you familiar with Web Technology? (HTML, JavaScript)</li>
+      </ul>
+    </section>
+    <section>
+      <img class="hero" src="media/fxos.png">
+      <h1>Firefox OS</h1>
+    </section>
+    <section>
+      <h1>Firefox OS</h1>
+      <ul>
+        <li data-subslide=1>Linux Kernel ("Gonk")</li>
+        <li data-subslide=2>Rendering Engine ("Gecko")</li>
+        <li id="html5" data-subslide=3>HTML5 UI Layer ("Gaia")<img src="media/yay.png" data-subslide=4></li>
+      </ul>
+    </section>
+    <section>
+      <h1>Why??</h1>
+    </section>
+    <section>
+      <h1>"If you can build a web site, you can build an App"</h1>
+    </section>
+    <section>
+      <h1>Portability</h1>
+      <ul>
+        <li>A well-built website works in every browser.</li>
+        <li>A well-built website will make a well-built App.</li>
+      </ul>
+    </section>
+    <section>
+      <h1>The Manifest</h1>
+      <ul>
+        <li>Describes your app</li>
+        <li>Simple JSON file</li>
+      </ul>
+    </section>
+    <section>
+      <h1 class="head">The Manifest</h1>
+      <pre>
+{
+  <span data-subslide=1>"name": "Calendar",</span>
+  <span data-subslide=2>"description": "Gaia Calendar",</span>
+  <span data-subslide=3>"launch_path": "/index.html",</span>
+  <span data-subslide=4>"developer": {
+    "name": "The Gaia Team",
+    "url": "http://example.com/"
+  },</span>
+  <span data-subslide=5>"icons": {
+    "64": "/img/icons/calendar-64.png"
+  }</span>
+}
+      </pre>
+    </section>
+    <section>
+      <h1>The Difficult Part</h1>
+      <ul>
+        <li>Must be served with a specific MIME type</li>
+        <li><code>application/x-web-app-manifest+json</code></li>
+      </ul>
+    </section>
+    <section>
+      <h2><code>navigator.mozApps.install</code></h2>
+      <ul>
+        <li>Supply it the URL of your Manifest</li>
+        <li>Installs the App</li>
+        <li>Creates a launch icon</li>
+      </ul>
+    </section>
+    <section>
+      <h1>Tools for testing your App</h1>
+    </section>
+    <section>
+      <img class="hero" src="media/b2g-desktop.png">
+    </section>
+    <section>
+      <img class="hero" src="media/r2d2b2g.png">
+    </section>
+    <section>
+      <img class="hero" src="media/android-mkt.jpeg">
+    </section>
+    <section>
+      <h1>Offline Capability</h1>
+    </section>
+    <section>
+      <pre>
+CACHE MANIFEST
+# Version 1
+
+CACHE:
+/index.html
+/media/style.css
+/media/site.js
+/logo.png
+https://login.persona.org/include.js
+      </pre>
+    </section>
+    <section>
+      <h1>Questions?</h1>
+    </section>
+    <section>
+      <h2>Thank You!</h2>
+      <ul>
+        <li><b>Guide to testing Gaia yourself</b> &mdash; <a href="http://www.potch.me/blog/developing-b2g-apps.html">http://www.potch.me/blog/developing-b2g-apps.html</a></li>
+        <li><b>r2d2b2g</b> &mdash; <a href="http://people.mozilla.com/~myk/r2d2b2g/">http://people.mozilla.com/~myk/r2d2b2g/</a></li>
+        <li><abbr title="Mozilla Developer Network">MDN</abbr> Article on Open Web Apps</abbr> &mdash; <a href="https://developer.mozilla.org/pt-BR/docs/Apps">https://developer.mozilla.org/pt-BR/docs/Apps</a></li>
+        <li>This Presentation on GitHub &mdash; <a href="http://potch.github.com/tdc-goiania/">http://potch.github.com/tdc-goiania/</a></li>
+        <li>potch@mozilla.com</li>
+        <li>@potch</li>
+      </ul>
+    </section>
+    <article id="notes">
+      <aside></aside>
+      <aside>Introduction</aside>
+      <aside>AMO</aside>
+      <aside>Marketplace</aside>
+      <aside>Disappoint</aside>
+      <aside>Talk about Open Web Apps</aside>
+      <aside>Poll the audience, gauge technical level</aside>
+      <aside>Firefox OS, the power and ease of the Web on a Phone</aside>
+      <aside>
+        (Technical) What is Firefox OS?
+        Same, Same, Same!
+        <ul>
+          <li>Gonk - Just like Android, It's powered by the Linux Kernel
+          <li>Gecko - The OS level is adapted from Gecko, the same rendering engine used in Firefox
+          <li>Gaia - The User interface layer is written entirely in HTML, CSS, and JavaScript
+          <li>- Using HTML5, the latest and greatest tools and capabilities of the Web
+          <li>- Accessing the special functions in a phone via addition APIs that are being standardized
+          <li>This is what I know the most about!
+        </ul>
+      </aside>
+      <aside>Why?</aside>
+      <aside>If you can build a web site, you can build an app</aside>
+      <aside>Portability</aside>
+      <aside>Web App = Web Site + Manifest</aside>
+      <aside>Parts of a manifest</aside>
+      <aside>Tricky Bits<br>MIME types!</aside>
+      <aside>Installation API</aside>
+      <aside>There are a few ways to test your app.</aside>
+      <aside>B2G Desktop</aside>
+      <aside>r2d2b2g</aside>
+      <aside>Firefox for Android</aside>
+      <aside>Offline</aside>
+      <aside>The Offline Cache Manifest</aside>
+      <aside>Questions</aside>
+      <aside>Thanks!</aside>
+    </article>
+    <script src="mu.js"></script>
+    <script src="decky.js"></script>
+  </body>
+</html>

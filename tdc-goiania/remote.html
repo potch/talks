@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>remote</title>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        button {
+            width: 40%;
+            height: 20%;
+            position: absolute;
+            bottom: 0;
+        }
+        #notes {
+            padding: 10px;
+            height: 40%;
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 100%;
+            overflow: auto;
+        }
+        #slide {
+            width: 100%;
+            height: 40%;
+        }
+        #prev {
+            left: 0;
+        }
+        #next {
+            right: 0;
+        }
+        #num {
+            position: absolute;
+            bottom: 5%;
+            width: 20%;
+            left: 40%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 36px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="num"></div>
+    <div id="slide"></div>
+    <div id="notes"></div>
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
+    <script src="nowjs/now.js"></script>
+    <script>
+        var notesEl = document.getElementById('notes');
+        var slideEl = document.getElementById('slide');
+        var numEl = document.getElementById('num');
+        window.onerror = function(m) {
+            document.title = m;
+        }
+        now = now || {};
+        now.next = function() {
+        }
+        now.prev = function() {
+        }
+        now.status = function(n, slide, notes) {
+            numEl.innerHTML = n;
+            slideEl.innerHTML = slide;
+            notesEl.innerHTML = notes;
+        }
+        now.ready(function() {
+            var touch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
+            var ev = touch ? 'touchstart' : 'click';
+            document.querySelector('#prev').addEventListener(ev, function(e) {
+                e.preventDefault();
+                now.remotePrev();
+                document.title = "prev";
+            });
+            document.querySelector('#next').addEventListener(ev, function(e) {
+                e.preventDefault();
+                now.remoteNext();
+                document.title = "next";
+            });
+            document.title = 'go!';
+        });
+    </script>
+  </body>
+</html>

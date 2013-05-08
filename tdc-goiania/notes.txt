@@ -1,0 +1,23 @@
+Hello.
+
+AMO + Marketplace
+
+At mozilla, webdevs have special role (first line of defense)
+
+first users of browser features
+
+The Dark Ages (f5)
+
+Then came firebug
+Joe Hewitt
+
+Firebug pretty much ruled the roost
+Still a go-to tool for web developers
+
+Integration is everything
+Research project
+
+so where do the Firefox Dev Tools come in?
+"The web must be easier to develop for than proprietary platforms."
+
+"One way in which Mozilla helps keep the web out in front is by making Firefox the best dynamic environment for building modern web applications."

@@ -1,0 +1,10 @@
+{
+  "name": "TDC Goiania Slides",
+  "description": "Slides for Potch's talk about developing Open Web Apps for Firefox OS",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "Potch,
+    "url": "https://github.com/potch/tdc-goiania"
+  },
+  "default_locale": "en-US"
+}
