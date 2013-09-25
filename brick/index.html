@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>Brick</title>
+    <link rel="stylesheet" href="brick.css">
+    <link rel="stylesheet" href="http://mozilla.github.io/brick/site/css/prettify.css">
+    <style>
+      html, body {
+        height: 100%;
+        counter-reset: slide;
+        font: 300 7.8vmin/10vmin 'Fira Sans';
+        color: #4D4E53;
+      }
+      h1 {
+        color: #810;
+        text-align: center;
+        margin: .5em auto 1em;
+      }
+      h1 i {
+        font-size: 50%;
+        display: block;
+        font-weight: 300;
+        margin: 1em auto;
+        color: #4D4E53;
+      }
+      x-card {
+        text-align: center;
+        padding: .5em .5em 2em .5em;
+        counter-increment: slide;
+        position: relative;
+        background: linear-gradient(to bottom, #EAEFF2, #D4DDE4), #D4DDE4;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      x-card:after {
+        font-size: .5em;
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        content: counter(slide);
+      }
+      .right {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+      }
+      b {
+        color: #FF9500;
+        font-weight: bold;
+      }
+      li {
+        font-style: italic;
+        white-space: nowrap;
+        margin: 0 .5em;
+        list-style-type: none;
+        display: inline;
+      }
+      ul {
+        margin: 0;
+      }
+      #demo {
+        width: 80vw;
+        height: 90vh;
+        position: relative;
+      }
+      #source {
+        font-family: 'Fira Mono';
+        text-align: left;
+        font-size: 5vmin;
+        line-height: 5vmin;
+        border: 0;
+        max-height: 100%;
+        max-width: 100%;
+        box-shadow: 0 .5em 1em rgba(0,0,0,.5);
+        overflow-x: hidden;
+        overflow-y: auto;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <x-deck>
+      <x-card>
+        <h1>Brick</h1>
+        <img style="width: 50vmin;" src="http://potch.github.io/brick/site/img/logo.svg">
+      </x-card>
+      <x-card>
+        <h1 style="font-size: 230%">Web Components <i>for</i> Modern Web Apps</h1>
+      </x-card>
+      <x-card>
+        <h1>All-star Team</h1>
+        <ul>
+          <li>appbar</li>
+          <li>calendar</li>
+          <li>datepicker</li>
+          <li>deck</li>
+          <li>flipbox</li>
+          <li>iconbutton</li>
+          <li>layout</li>
+          <li>slidebox</li>
+          <li>slider</li>
+          <li>tabbar</li>
+          <li>toggle</li>
+          <li>togglegroup</li>
+          <li>tooltip</li>
+        </ul>
+      </x-card>
+      <x-card>
+        <h1>Kind of a Big Deal</h1>
+        <div><img style="width:50%" src="github.png"></div>
+        <p>1500 &#x2605;  &middot;  Active Pull Requests and Issues</p>
+      </x-card>
+      <x-card>
+        <h1>How did we get here?</h1>
+        <p>Intern project to fill known need in the ecosystem</p>
+        <p>People got excited!</p>
+      </x-card>
+      <x-card>
+        <h2>Roadmap</h2>
+        <ul>
+          <li><b>Q4</b></li>
+          <li>1.0</li>
+          <li>Mortar Beta</li>
+        </ul>
+        <ul>
+          <li><b>H1 2014</b></li>
+          <li>New Components</li>
+          <li>Gaia Skin</li>
+          <li>AppMaker integration</li>
+          <li>2.0</li>
+        </ul>
+        <ul>
+          <li><b>H2 2014</b></li>
+          <li>Flying Cars</li>
+          <li>Potch in Fortune Magazine</li>
+          <li>IPO</li>
+        </ul>
+      </x-card>
+      <x-card>
+        <h1>The Road to 1.0</h1>
+        <ul>
+          <li><b>&#x2713;</b>skinnability</li>
+          <li>accessibility</li>
+          <li>new components</li>
+          <li><b>&#x2713;</b>modularity</li>
+          <li>30+FPS in B2G</li>
+          <li><b>&#x2713;</b>Automated Testing</li>
+          <li>sexy default appearance</li>
+        </ul>
+      </x-card>
+      <x-card>
+        <x-flipbox id="demo" direction="up">
+          <div style="line-height: 40vmin"><h1>Demo</h1></div>
+          <pre id="source" class="prettyprint lang-html"></pre>
+        </x-flipbox>
+      </x-card>
+    </x-deck>
+    <script src="brick.js"></script>
+    <script>
+
+      document.querySelector('#source').textContent = '<!-- BWWWRROOMMM -->\n' + document.body.innerHTML.split('\n').map(function(l) { return l.replace(/^\s{4}/, '', 'g'); }).join('\n').replace(/^\s*\n/m, '');
+
+      window.addEventListener('DOMComponentsLoaded', function() {
+        var deck = document.querySelector('x-deck');
+        var flip = document.querySelector('#demo');
+
+        var s = document.createElement('script');
+        s.src = 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js';
+        document.body.appendChild(s);
+
+        document.body.addEventListener('keydown', function(e) {
+          console.log(e);
+          if (e.keyCode == 39) { // right
+            deck.shuffleNext("forward");
+          }
+          if (e.keyCode == 13) {
+            flip.toggle();
+          }
+          if (e.keyCode == 37) { // left
+            deck.shufflePrev("reverse");
+          }
+        });
+      });
+
+      (function addFullScreenMenu () {
+        var menu = document.createElement('menu');
+        var item = document.createElement('menuitem');
+        menu.setAttribute('id', 'fsmenu');
+        menu.setAttribute('type', 'context');
+        item.setAttribute('label', 'Fullscreen');
+        item.addEventListener('click', function (e) {
+        if (window.fullScreen) {
+        document.body.mozCancelFullScreen();
+        } else {
+        document.body.mozRequestFullScreen();
+        }
+        });
+        menu.appendChild(item);
+        document.body.appendChild(menu);
+        document.body.setAttribute('contextmenu', 'fsmenu');
+      })();
+
+    </script>
+  </body>
+</html>
