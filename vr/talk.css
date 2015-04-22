@@ -1,0 +1,225 @@
+:root {
+  --var-orange: #E66000;
+  --var-blue: #00539F;
+  --var-header: var(--var-orange);
+}
+* {
+  font-weight: 300;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+kbd,
+code,
+pre {
+  font-family: monospace;
+  font-size: 10vmin;
+  margin: .2em;
+}
+body,
+html {
+  background: #000;
+  font-family: 'Fira Sans', sans-serif;
+  color: #55565a;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #000;
+  background-image: -moz-radial-gradient(#fff, #EAEFF2);
+  overflow: hidden;
+}
+a {
+  color: #00539F;
+}
+b {
+  font-weight: 500;
+}
+.c {
+  text-align: center;
+}
+.big {
+  font-size: 150%;
+}
+.big2 {
+  font-size: 300%;
+}
+img.vc {
+  max-height: 90vh;
+  max-width: 90vw;
+  display: block;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%,-50%);
+}
+em {
+  color: var(--var-header);
+  font-weight: inherit;
+}
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--var-header);
+}
+#masthead {
+  float: left;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 1%;
+}
+section, [data-pos=after] {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+/*  -webkit-transition: 0.5s -webkit-transform ease-out;
+  -moz-transition: 0.5s -moz-transform ease-in-out;
+  -ms-transition: 0.5s -ms-transform ease-in-out;
+  -o-transition: 0.5s -o-transform ease-in-out;
+  transition: 0.5s transform ease-in-out;
+*/
+  -webkit-transform: translate(100vw, 0);
+  -moz-transform: translate(100vw, 0);
+  -ms-transform: translate(100vw, 0);
+  -o-transform: translate(100vw, 0);
+  transform: translate(100vw, 0);
+}
+[data-pos=before] {
+  -webkit-transform: translate(-100vmin, 0);
+  -moz-transform: translate(-100vw, 0);
+  -ms-transform: translate(-100vw, 0);
+  -o-transform: translate(-100vw, 0);
+  transform: translate(-100vw, 0);
+}
+[data-pos=active] {
+  display: flex;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.head {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  font-size: 80%;
+}
+footer {
+  font-size: 70%;
+}
+code {
+  font-size: 5vmin;
+}
+code.wide {
+  position: relative;
+  width: 90vw;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%,0);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.contain {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%,0);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.demo1 .input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  font-size: 3vmin;
+  padding: 1em;
+  margin: 0;
+  resize: none;
+}
+
+.demo1 .output {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  padding: 1em;
+  font-size: 50%;
+}
+
+.title {
+  background-color: silver;
+  background-image: linear-gradient(335deg, #fff 23px, transparent 23px),
+  linear-gradient(155deg, #fff 23px, transparent 23px),
+  linear-gradient(335deg, #fff 23px, transparent 23px),
+  linear-gradient(155deg, #fff 23px, transparent 23px);
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+}
+
+.title h1 {
+  color: #000;
+  margin: 0;
+}
+
+.title img {
+  width: 50vw;
+}
+
+.moz {
+  width: 80vw;
+}
+
+.w3c {
+  font-family: sans-serif;
+  color: #005A9C;
+  font-weight: 400;
+  background: #fff;
+}
+
+.giraffe {
+  position: absolute;
+  bottom: 0;
+  left: 50vw;
+  transform: translate(-50%, 0);
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.dark {
+  color: #fff;
+  font-size: 20vmin;
+  text-shadow: 0.075em 0em #000,0.07125em 0.023em #000,0.0605em 0.044em #000,0.044em 0.0605em #000,0.023em 0.07125em #000,0em 0.075em #000,-0.023em 0.07125em #000,-0.044em 0.0605em #000,-0.0605em 0.044em #000,-0.07125em 0.023em #000,-0.075em 0em #000,-0.07125em -0.023em #000,-0.0605em -0.044em #000,-0.044em -0.0605em #000,-0.023em -0.07125em #000,0em -0.075em #000,0.023em -0.07125em #000,0.044em -0.0605em #000,0.0605em -0.044em #000,0.07125em -0.023em #000;
+}
+
+.cani {
+  width: 90vw;
+  height: 40vh;
+}
+
+.many img {
+  display: inline-block;
+}
+.many {
+  padding: 0;
+}

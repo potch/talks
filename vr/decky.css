@@ -1,0 +1,117 @@
+* {
+    -moz-box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+}
+#deck {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 800px;
+    min-height: 600px;
+    max-width: 800px;
+    max-height: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+section {
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+    padding: 5%;
+    font-size: 120%;
+    position: relative;
+    counter-increment: slides;
+    background: #fff;
+}
+section:after {
+    content: counter(slides);
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+    font-size: 50%;
+    color: rgba(0,0,0,.5);
+}
+body.list {
+    overflow: inherit;
+}
+body.list section {
+    border: 1px solid black;
+    margin: 2%;
+    width: 46%;
+    height: 50%;
+    float: left;
+}
+body.list [data-subslide] {
+    visibility: visible !important;
+}
+h1, h2, h3 {
+    text-align: center;
+    margin: 2% 0;
+    font-weight: 800;
+}
+h1 { font-size: 200%; }
+h2 { font-size: 150%; }
+h3 { font-size: 120%; }
+
+h1:only-child {
+    margin-top: 10%;
+}
+
+section li {
+    margin: 1% 0;
+}
+section table {
+    border-collapse: collapse;
+    width: 100%;
+}
+table th,
+table td {
+    padding: 1% 2%;
+    text-align: left;
+}
+table thead tr {
+    background: rgba(0,0,0,.2);
+}
+table tr:nth-child(2n) {
+    background: rgba(0,0,0,.1);
+}
+section .col {
+    width: 49%;
+    float: left;
+    margin: 0 0.5%;
+}
+img {
+    vertical-align: middle;
+    display: block;
+}
+.hero {
+    max-height: 80%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+details {
+    display: none;
+}
+header, footer {
+	width: 100%;
+	position: fixed;
+	z-index: -1;
+}
+header {
+	top: 0;
+}
+footer {
+	font-size: 80%;
+	bottom: 0;
+	text-align: center;
+	z-index: 1;
+}

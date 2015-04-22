@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MozVR</title>
+    <meta charset="utf-8">
+    <style>
+      * {
+          -moz-box-sizing: border-box;
+      }
+      body, html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          width: 100%;
+          font-size: 8vmin;
+          overflow: hidden;
+      }
+      #deck {
+          width: 100vw;
+          height: 100vh;
+          margin: auto;
+          position: relative;
+      }
+      [subslide] {
+        visibility: hidden;
+      }
+      section {
+          width: 100%;
+          height: 100%;
+          max-width: 100vw;
+          padding: 5%;
+          position: relative;
+          counter-increment: slides;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+      }
+/*      section:after {
+          content: counter(slides);
+          position: absolute;
+          right: 2vmin;
+          bottom: 2vmin;
+          font-size: 50%;
+          color: rgba(0,0,0,.5);
+      }*/
+      h1, h2, h3 {
+          text-align: center;
+          margin: 2% 0;
+          font-weight: 800;
+      }
+      h1 { font-size: 200%; }
+      h2 { font-size: 150%; }
+      h3 { font-size: 120%; }
+
+      h1:last-child {
+        position: absolute;
+        top: 45%;
+        width: 100%;
+        left: 0;
+        padding: 5%;
+        transform: translate(0,-50%);
+      }
+
+      section li {
+          margin: 1% 0;
+      }
+      section table {
+          border-collapse: collapse;
+          width: 100%;
+      }
+      table th,
+      table td {
+          padding: 1% 2%;
+          text-align: left;
+      }
+      table thead tr {
+          background: rgba(0,0,0,.2);
+      }
+      table tr:nth-child(2n) {
+          background: rgba(0,0,0,.1);
+      }
+      section .col {
+          width: 49%;
+          float: left;
+          margin: 0 0.5%;
+      }
+      img {
+          vertical-align: middle;
+          display: block;
+      }
+      h1, h2 {
+        font-style: italic;
+      }
+      details {
+          display: none;
+      }
+      header, footer {
+        width: 100%;
+        position: fixed;
+        z-index: -1;
+      }
+      header {
+        top: 0;
+      }
+      footer {
+        font-size: 80%;
+        bottom: 0;
+        text-align: center;
+        z-index: 1;
+      }
+      .slow {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform-origin: top center;
+        transform: translate(-50%, 0) scale(.5);
+      }
+      .twitter-tweet {
+        transform: scale(1.5);
+      }
+      iframe.full {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        pointer-events: none;
+      }
+    </style>
+    <link rel="stylesheet" href="css/solarized_light.min.css">
+    <link rel="stylesheet" href="bower_components/fira/fira.css">
+    <link rel="stylesheet" href="talk.css">
+  </head>
+  <body>
+    <article id="deck">
+
+<section>
+  <h2>&ldquo;Cool Oculus demo. What's with the Firefox logos?&rdquo;</h2>
+</section>
+
+<section style="background-image:url(img/post-splash.jpg)" class="cover">
+</section>
+
+<section style="background-image:url(img/whoa.gif)" class="cover">
+</section>
+
+<section style="background-image:url(img/allofthem.png)" class="cover">
+</section>
+
+<section>
+  <img class="vc moz" src="img/mozillahtml5.svg">
+</section>
+
+<section style="background-image:url(img/carmack.jpg)" class="cover">
+  <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/timeinvariance">@timeinvariance</a> that is the beauty of JS / WebGL -- I hopped in and played your game seconds after the tweet popped up.</p>&mdash; John Carmack (@ID_AA_Carmack) <a href="https://twitter.com/ID_AA_Carmack/status/553720089674260480">January 10, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+
+<section>
+  <iframe src="http://mozvr.com/" seamless class="full"></iframe>
+</section>
+
+<section>
+  <h1><em>https://mozvr.com/</em></h1>
+</section>
+
+</article>
+
+  <script src="µ.js"></script>
+  <script src="decky.js"></script>
+  <script src="js/demos.js"></script>
+  <script src="js/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</body>
+</html>
